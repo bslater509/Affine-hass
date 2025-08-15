@@ -1,0 +1,45 @@
+name: "Obsidian LiveSync"
+version: "1.0.0"
+slug: "obsidian_livesync"
+description: "Self-hosted CouchDB instance for Obsidian LiveSync synchronization"
+url: "https://github.com/vrtmrz/obsidian-livesync"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+
+init: false
+startup: services
+boot: auto
+image: "oleduc/docker-obsidian-livesync-couchdb:latest"
+
+# Network configuration
+ports:
+  5984/tcp: 5984
+ports_description:
+  5984/tcp: "CouchDB HTTP port for Obsidian sync"
+
+# Storage mapping for persistent data
+map:
+  - addon_config:rw
+
+# Default configuration options
+options:
+  database_name: "obsidian"
+  couchdb_user: "obsidian_user"
+  couchdb_password: "changeme123"
+  server_domain: "homeassistant.local"
+
+# Configuration schema validation
+schema:
+  database_name: "str(1,50)"
+  couchdb_user: "str(1,50)" 
+  couchdb_password: "password"
+  server_domain: "str(1,100)"
+
+# Addon capabilities
+hassio_api: false
+homeassistant_api: false
+host_network: false
