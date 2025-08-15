@@ -14,7 +14,7 @@ arch:
 init: false
 startup: services
 boot: auto
-image: "oleduc/docker-obsidian-livesync-couchdb:latest"
+image: oleduc/docker-obsidian-livesync-couchdb:latest
 
 # Network configuration
 ports:
