@@ -1,8 +1,9 @@
-name: "Obsidian LiveSync"
-version: "1.0.0"
-slug: "obsidian_livesync"
-description: "Self-hosted CouchDB instance for Obsidian LiveSync synchronization"
-url: "https://github.com/vrtmrz/obsidian-livesync"
+---
+name: Obsidian LiveSync
+version: 1.0.0
+slug: obsidian_livesync
+description: Self-hosted CouchDB instance for Obsidian LiveSync synchronization
+url: https://github.com/vrtmrz/obsidian-livesync
 arch:
   - armhf
   - armv7
